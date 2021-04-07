@@ -32,12 +32,14 @@ public class LocProviderListActivity extends AppCompatActivity{
                 locMgr = (LocationManager) getSystemService(LOCATION_SERVICE);
                 locProviders = locMgr.getAllProviders();
 
-                String s = "";
-                for (int i = 0; i < locProviders.size(); i++) {
-                    s += "Loc. Provider : " + locProviders.get(i) + "\n"
-                            + "Status : " + locMgr.isProviderEnabled(locProviders.get(i)) + "\n\n";
+
+                for (String s: locProviders) {
+
+                    s += ("Loc. Provider : " + locProviders + "\n"
+                            + "Status : " + locMgr.isProviderEnabled(locProviders + "\n\n"));
+                    mTextView.setText(s);
                 }
-                mTextView.setText(s);
+
             }
 
         });
